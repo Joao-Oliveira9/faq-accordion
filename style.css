@@ -1,0 +1,126 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+- White: hsl(0, 0%, 100%)
+- Light pink: hsl(275, 100%, 97%)
+- Grayish purple: hsl(292, 16%, 49%)
+- Dark purple: hsl(292, 42%, 14%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraphs): 16px
+
+### Font
+
+- Family: [Work Sans](https://fonts.google.com/specimen/Work+Sans)
+- Weights: 400, 600, 700 */
+
+@font-face {
+    font-family:Work Sans;
+    src: url(assets/fonts/static/WorkSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: regular;
+    src: url(assets/fonts/static/WorkSans-Regular.ttf);
+}
+
+
+:root{
+    /* colors */
+    --background-color:hsl(0, 0%, 100%);
+    --background-color2:hsl(275, 100%, 97%);
+    --clr-summary:hsl(292, 42%, 14%);
+    --clr-paragraph:hsl(292, 16%, 49%);
+    /* typography */
+    --ff-page:Work Sans;
+}
+
+*{
+    font-family:var(--ff-page);
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(assets/images/background-pattern-desktop.svg); 
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+    min-width: 100vh;
+    min-height: 100vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--background-color2);
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+h1::before{
+    content: url(assets/images/icon-star.svg);
+}
+
+summary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0 1rem 0;
+}
+
+summary::after{
+    content: url(assets/images/icon-plus.svg);
+}
+
+li{
+    list-style: none;
+}
+
+details p{
+   font-family: regular;
+   color:var(--clr-paragraph);
+}
+
+.box{
+    z-index: 1;
+  /*   border:1px solid black; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around; */
+    line-height: normal;
+    border-radius: 25px;
+    padding: 1.5rem;
+    width:60vh;
+    background-color: var(--background-color);
+}
+
+.box,footer{
+    color: var(--clr-summary); 
+}
+
+ul{
+    padding: 1rem;
+}
+
+footer{
+    z-index: 1;
+}
+
+details[open] > summary::after {
+    content: url(assets/images/icon-minus.svg);
+  }
